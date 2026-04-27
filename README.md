@@ -27,7 +27,7 @@ ttsai = "0.1"
 tokio = { version = "1", features = ["full"] }
 ```
 
-Requires Rust 1.75+. Uses `reqwest` with `rustls-tls` (no system OpenSSL needed).
+Requires Rust 1.85+. Uses `reqwest` with `rustls-tls` (no system OpenSSL needed).
 
 ## Methods
 

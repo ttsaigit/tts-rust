@@ -2,7 +2,7 @@
 name = "ttsai"
 version = "0.1.0"
 edition = "2021"
-rust-version = "1.80"
+rust-version = "1.85"
 description = "Official Rust SDK for the TTS.ai REST API. Async, mirrors the Python/JS/PHP/Go/Ruby SDK method shapes."
 license = "Apache-2.0"
 repository = "https://github.com/ttsaigit/tts-rust"
@@ -22,6 +22,4 @@ url = "2"
 
 [dev-dependencies]
 tokio = { version = "1", features = ["macros", "rt-multi-thread", "fs"] }
-# Pin below 0.6.5 — that version requires edition2024 (Rust 1.85+).
-# We keep MSRV at 1.80 so older toolchains can still build.
-wiremock = ">=0.6.0, <0.6.5"
+wiremock = "0.6"
