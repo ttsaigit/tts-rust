@@ -26,7 +26,7 @@ use std::time::{Duration, Instant};
 
 use reqwest::header::{HeaderMap, HeaderValue, AUTHORIZATION, USER_AGENT};
 use reqwest::multipart::{Form, Part};
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
 use thiserror::Error;
 use tokio::time::sleep;
 
