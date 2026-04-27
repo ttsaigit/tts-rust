@@ -2,7 +2,7 @@
 name = "ttsai"
 version = "0.1.0"
 edition = "2021"
-rust-version = "1.85"
+rust-version = "1.86"
 description = "Official Rust SDK for the TTS.ai REST API. Async, mirrors the Python/JS/PHP/Go/Ruby SDK method shapes."
 license = "Apache-2.0"
 repository = "https://github.com/ttsaigit/tts-rust"

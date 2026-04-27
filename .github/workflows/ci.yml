@@ -9,15 +9,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        rust: ["1.85", "stable"]
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Rust ${{ matrix.rust }}
-        uses: dtolnay/rust-toolchain@master
+      - name: Set up Rust (stable)
+        uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: ${{ matrix.rust }}
           components: clippy
       - name: Cargo cache
         uses: actions/cache@v4
@@ -26,9 +22,8 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             target
-          key: ${{ runner.os }}-cargo-${{ matrix.rust }}-${{ hashFiles('**/Cargo.toml') }}
+          key: ${{ runner.os }}-cargo-stable-${{ hashFiles('**/Cargo.toml') }}
       - name: Clippy
-        if: matrix.rust == 'stable'
         run: cargo clippy --all-targets -- -D warnings
       - name: Test
         run: cargo test --all-targets
